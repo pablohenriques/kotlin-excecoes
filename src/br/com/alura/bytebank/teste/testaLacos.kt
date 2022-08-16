@@ -1,3 +1,5 @@
+@file:Suppress("NAME_SHADOWING")
+
 package br.com.alura.bytebank.teste
 
 fun testaLacos() {
