@@ -1,31 +1,14 @@
 package br.com.alura.bytebank
 
-import br.com.alura.bytebank.exception.SaldoInsuficienteException
-import br.com.alura.bytebank.teste.testaComportamentosConta
+import br.com.alura.bytebank.modelo.Endereco
 
 fun main() {
-//    println("inicio main")
-//    funcao1()
-//    println("fim main")
-    testaComportamentosConta()
-}
+    val enderecoNulo: Endereco? = Endereco(logradouro = "rua vergueiro")
+    val logradouroNovo: String? = enderecoNulo?.logradouro
 
-fun funcao1() {
-    println("inicio funcao1")
-    try {
-        funcao2()
-    } catch (e: ArithmeticException) {
-        e.printStackTrace()
-        println("ArithmeticException")
-    }
-    println("fim funcao1")
-}
+//    enderecoNulo.let { println(it?.logradouro) }
 
-fun funcao2() {
-    println("inicio funcao2")
-    for(i in 1..5) {
-        //val divisao = i / 0
-        throw SaldoInsuficienteException()
+    enderecoNulo?.let { endereco: Endereco ->
+        println(endereco.logradouro.length)
     }
-    println("fim funcao2")
 }
